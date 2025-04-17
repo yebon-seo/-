@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>부채꼴 슬라이드 - 페이지네이션 안 가리기</title>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+  />
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      background: #111;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: sans-serif;
+      outline: 1px solid red;
+    }
+
+    /* ✅ 슬라이드 컨테이너 */
+    .swiper-container-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow: visible; /* 슬라이드 밖 콘텐츠 보이게 */
+      outline: 1px solid red;
+      height: auto;
+    }
+    
+    .swiper {
+      width: 90%;
+      max-width: 900px;
+      height: 300px;
+    }
+
+    .swiper-slide {
+      background: linear-gradient(135deg, #2563eb, #3b82f6);
+      color: #fff;
+      font-size: 40px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .swiper-pagination {
+      margin-top: 12px; /* 슬라이드 아래 딱 붙게 */
+      text-align: center;
+    }
+
+    /* 비활성화된 페이지네이션 - 원형 */
+    .swiper-pagination-bullet {
+      background: #fff;
+      opacity: 0.4;
+      width: 12px;  /* 기본 크기 */
+      height: 12px; /* 기본 크기 */
+      border-radius: 50%; /* 원형 모양 */
+      margin: 0 6px; /* 간격 */
+    }
+
+    /* 활성화된 페이지네이션 - 길쭉한 형태 */
+    .swiper-pagination-bullet-active {
+      background: #3b82f6;
+      opacity: 1;
+      width: 40px;  /* 길쭉하게 크기 증가 */
+      height: 12px; /* 높이는 그대로 유지 */
+      border-radius: 6px; /* 둥근 직사각형 형태 */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ✅ 페이지네이션 포함한 래퍼 -->
+  <div class="swiper-container-wrapper">
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">1</div>
+        <div class="swiper-slide">2</div>
+        <div class="swiper-slide">3</div>
+        <div class="swiper-slide">4</div>
+        <div class="swiper-slide">5</div>
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper(".mySwiper", {
+      effect: "creative",
+      grabCursor: true,
+      loop: true,
+      centeredSlides: true,
+      slidesPerView: 3,
+      spaceBetween: 60,
+
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+
+      creativeEffect: {
+        prev: {
+          shadow: true,
+          translate: ["-100%", 0, -300],
+          rotate: [0, 0, -45],
+        },
+        next: {
+          shadow: true,
+          translate: ["100%", 0, -300],
+          rotate: [0, 0, 45],
+        },
+      },
+    });
+  </script>
+</body>
+</html>
