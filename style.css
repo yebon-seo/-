@@ -21,7 +21,9 @@ li {
 a {
   text-decoration: none;
 }
-
+body {
+  cursor: url('images/flower.png'), auto;
+}
 html,
 body {
   width: 100%;
@@ -81,7 +83,7 @@ header .container nav>ul>li>a {
 /*logo*/
 header .container nav .logo {
   width: 20vw;
-  cursor: pointer;
+  cursor: url("images/flower.png")pointer;
   transition: 0.3s;
 }
 /*hover*/
@@ -209,7 +211,7 @@ header .container nav ul .search img {
   bottom: 120px;
   left: 50%;
   transform: translateX(-50%);
-  cursor: pointer;
+  cursor: url("images/flower.png")pointer;
   /* 부드러운 애니메이션 */
   transition: transform 0.25s ease, box-shadow 0.15s ease;
 
@@ -269,7 +271,7 @@ header .container nav ul .search img {
   border: none;
   outline: none;
   border-bottom: 2px solid #f1f1f1;
-  cursor: pointer;
+  cursor: url("images/flower.png") pointer;
 }
 /*hover*/
 #help-us .container button:hover {
@@ -283,7 +285,7 @@ header .container nav ul .search img {
 /*pick a flim*/
 #flim {
   width: 100%;
-  height: 100vh;
+  /* height: 100vh; */
   background-color: #F8F3E7;
 }
 #flim .container {
@@ -300,31 +302,51 @@ header .container nav ul .search img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow: visible; /* 슬라이드 밖 콘텐츠 보이게 */
+  overflow: hidden; /* 슬라이드 밖 콘텐츠 보이게 */
   /* height: auto; */
 }
 
 .swiper2 {
   width: 100%;
   max-width: 1200px;
+  position: relative;
 }
 
+.swiper2 > .swiper-wrapper {
+  border-radius: 20px;
+}
 .swiper2 > .swiper-wrapper > .swiper-slide {
-  color: #fff;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 70px;
   text-align: center;
+  justify-content: center;
+  align-items: center; /* 이게 핵심! 텍스트 포함 콘텐츠 정중앙 정렬 */
+  overflow: visible; /*😉*/
+  background-color: transparent;
 }
 .swiper2 > .swiper-wrapper > .swiper-slide > img {
+  border-radius: 20px;
+  object-fit: cover;
   width: 100%;
   height: 100%;
+  display: block;
 }
 .swiper2 > .swiper-wrapper > .swiper-slide > h4 {
   font-size: 48px;
   color: #F05B23;
   font-family:"cafe24 Decobox";
+  white-space: nowrap;/*😉*/
+  display: inline-block;/*😉*/
+  text-align: center;
+  /* display: none; */
+  /*visibility: hidden;😉*/
+  opacity: 0;
+  /*transition: opacity 0.2s ease;😉*/
+}
+.swiper2 > .swiper-wrapper > .swiper-slide-active h4 {
+  opacity: 1;
 }
 
 .swiper-pagination2 {
@@ -350,6 +372,292 @@ header .container nav ul .search img {
   height: 12px; /* 높이는 그대로 유지 */
   border-radius: 6px; /* 둥근 직사각형 형태 */
 }
+#flim > .container > button {
+  font-size: 28px;
+  color: #111;
+  font-family: "Chewy";
+  text-decoration: underline;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  /* border-bottom: 2px solid #111; */
+  margin-top: 40PX;
+  cursor: url("images/flower.png")pointer;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+/*hover*/
+#flim .container button:hover {
+  color: #666;
+  
+}
+
+/*==============================*/
+/*shop*/
+#shop {
+  width: 100%;
+  background-color: #1a1a24;
+  padding: 120px 20px;
+}
+#shop > .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+#shop .container .logo {
+  width: 10vw;
+}
+#shop .container .logo img {
+  width: 100%;
+  height: 100%;
+}
+/*타이틀*/
+#shop .container .txt {
+  text-align: center;
+  color: #f1f1f1;
+  width: 100%;
+}
+#shop .container .txt h2 {
+  font-family: "cafe24 Decobox";
+  font-size: 80px;
+  margin-top: 5px;
+  text-align: center;
+}
+#shop .container .txt p {
+  font-size: 24px;
+  margin-bottom: 50px;
+  font-family: 'Montserrat';
+}
+/*버튼*/
+#shop .container button {
+  font-size: 24px;
+  color: #f1f1f1;
+  font-family: "Chewy";
+  background: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #f1f1f1;
+  cursor: url("images/flower.png") pointer;
+}
+/*hover*/
+#shop .container button:hover {
+  color: #aaa;
+  border-bottom: 2px solid #aaa;
+}
+
+/*==============================*/
+/*footer*/
+#footer {
+  width: 100%;
+  background: url(images/footer-bg.png) center no-repeat;
+  background-color: #F8F3E7;
+  padding: 120px 45px;
+  position: relative;
+  /* overflow: hidden; */
+}
+#footer .container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+#footer .container > .left-con {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30%;
+}
+#footer .container > .left-con > .wrap {
+  display: flex;
+  width: 100%;
+  gap: 30px;
+  justify-content: space-between;
+}
+#footer .container > .left-con > .wrap > ul{
+  /* width: 50%; */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+#footer .container > .left-con > .wrap > ul > li {
+  width: 100%;
+}
+#footer .container > .left-con > .wrap > ul > li > a{
+  font-size: 20px;
+  font-family: "Chewy";
+  color: #333;
+}
+#footer .container > .left-con > .wrap > ul > li:hover a {
+  color: #F7AB1F;
+}
+#footer .container > .left-con > .copyright {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 40px;
+}
+#footer .container > .left-con > .copyright > p {
+  color: #333;
+  font-size: 14px;
+  font-family: "Chewy";
+}
+
+/*그로밋이미지*/
+.fix-img {
+  position: absolute;
+  bottom: 0;left: 50%;
+  transform: translateX(-50%);
+  width: 30vw;
+  height: 50vh;
+}
+.fix-img img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  overflow: visible;
+}
+.scroll-image {
+ 
+  opacity: 0; /* 처음엔 안 보이게 */
+}
+
+
+.right-con {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 30%;
+}
+.right-con > .logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.right-con > .logo > img {
+  width: 168px;
+  height: 35px;
+  object-fit: cover;
+  display: block;
+}
+.right-con > .logo > ul {
+  display: flex;
+  gap: 15px;
+}
+.right-con > .logo > ul li a {
+  color: #333;
+  font-size: 20px;
+  font-family: "Chewy";
+  text-decoration: underline;
+}
+.right-con > .logo > ul li:hover a {
+  color: #F7AB1F;
+}
+.right-con > .sns {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+/*작은화면 사이즈 footer*/
+.w-995_container {
+  display: none;
+  width: 100%;
+  height: 90vh;
+}
+.w-995_container > .contents-box {
+  display: flex;
+  width: 100%;
+  height: auto;
+  /* outline: 1px solid red; */
+}
+.w-995_container > .contents-box > .wrap {
+  width: 100%;
+}
+.wrap > .top-con {
+  display: flex;
+  flex-direction: column;
+}
+.wrap > .top-con > .logo {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  /* width: 100%; */
+}
+.wrap > .top-con > .logo > img {
+  width: 200px;
+  height: 40px;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 20px;
+}
+.wrap > .top-con > .logo > ul {
+  display: flex;
+  gap: 15px;
+  text-decoration: underline;
+}
+
+.wrap > .top-con > .logo > ul li a {
+  color: #333;
+  font-size: 20px;
+  font-family: "Chewy";
+}
+/*nav*/
+.wrap > .top-con > .f-nav {
+  /* width: 70%; */
+  display: flex;
+  gap: 40px;
+  width: 100%;
+  justify-content: flex-start;
+  margin-top: 40px;
+}
+.wrap > .top-con > .f-nav > ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  /* outline: 2px solid blue; */
+}
+.wrap > .top-con > .f-nav > ul li a {
+  color: #333;
+  font-size: 20px;
+  font-family: "Chewy";
+}
+.w-995_container .wrap > .sns {
+  margin-top: 40px;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+.w-995_container .wrap > .copyright {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+}
+.w-995_container .wrap > .copyright p {
+  color: #333;
+  font-size: 14px;
+  font-family: "Chewy";
+  margin-top: 10xp;
+}
+.fade-in {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+
+
+
+/*1340*/
+@media screen and (max-width:1340px) {
+  #footer .container > .left-con > .copyright {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+}
 
 /*1200*/
 @media screen and (max-width:1200px) {
@@ -374,9 +682,33 @@ header .container nav ul .search img {
   }
   #help-us .container .txt p {
     padding: 0;
+  }
+  #flim .container .title h2 {
+    font-size: 100px;
+  }
+  #shop {
+    padding: 60px 20px;
+  }
+  #shop .container .logo {
+    width: 15vw;
+  }
+  #shop .container .txt h2 {
+    font-size: 60px;
+  }
 }
+/*995*/
+@media (max-width:995px){
+  #footer{
+    padding: 45px;
+  }
+  #footer .container {
+    display: none;
+  }
+  .w-995_container {
+    display: block;
+  }
+  
 }
-
 /*768*/
 @media (max-width:770px) {
   header .container nav .logo {
@@ -423,7 +755,31 @@ header .container nav ul .search img {
   }
   #help-us .container .txt p {
     font-size: 18px;
-}
+  }
+  #flim .container {
+    padding: 60px 0;
+  }
+  #flim .container .title h2 {
+    font-size: 60px;
+  }
+  .swiper2 > .swiper-wrapper > .swiper-slide > h4 {
+    font-size: 36px;
+  }
+  #flim > .container > button {
+    font-size: 24px;  
+  }
+  #shop {
+    padding: 40px 20px;
+  }
+  #shop .container .logo {
+    width: 20vw;
+  }
+  #shop .container .txt h2 {
+    font-size: 40px;
+  }
+  #shop .container .txt p {
+    font-size: 20px;
+  }
 }
 
 /*600*/
@@ -443,6 +799,9 @@ header .container nav ul .search img {
   #help-us .container .txt p {
     font-size: 16px;
 }
+  #shop .container .logo {
+    width: 30vw;
+  }
 }
 /*454*/
 @media (max-width:454px) {
@@ -450,6 +809,11 @@ header .container nav ul .search img {
     padding: 40px 20px;
   }
   #help-us .container .txt p {
+    font-size: 14px;}
+  .swiper2 > .swiper-wrapper > .swiper-slide {
+    gap: 50px;
+  }
+  #shop .container .txt p {
     font-size: 14px;}
 }
 /*378*/
@@ -474,5 +838,20 @@ header .container nav ul .search img {
   }
   #help-us .container .txt h2 {
     font-size: 40px;
+  }
+  #flim .container {
+    padding: 40px 0;
+  }
+  #flim .container .title h2 {
+    font-size: 40px;
+  }
+  .swiper2 > .swiper-wrapper > .swiper-slide > h4 {
+    font-size: 20px;
+  }
+  #flim > .container > button {
+    font-size: 20px;  
+  }
+  #shop .container .logo {
+    width: 30vw;
   }
 }
