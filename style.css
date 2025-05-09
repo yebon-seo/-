@@ -1,10 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Chewy&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://cdn.jsdelivr.net/gh/fonts-archive/Cafe24Decobox/Cafe24Decobox.css');
 
 @font-face {
-  font-family: 'Cafe24Decobox';
-  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2405-3@1.1/Cafe24Decobox.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'Cafe24 Decobox';
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+    src: url('https://cdn.jsdelivr.net/gh/fonts-archive/Cafe24Decobox/Cafe24Decobox.woff2') format('woff2'),
+         url('https://cdn.jsdelivr.net/gh/fonts-archive/Cafe24Decobox/Cafe24Decobox.woff') format('woff'),
+         url('https://cdn.jsdelivr.net/gh/fonts-archive/Cafe24Decobox/Cafe24Decobox.otf') format('opentype'),
+         url('https://cdn.jsdelivr.net/gh/fonts-archive/Cafe24Decobox/Cafe24Decobox.ttf') format('truetype');
 }
 
 * {
@@ -152,7 +157,7 @@ header .container nav ul .search img {
 #news>.container>.title>h2 {
   font-size: 80px;
   color: #111;
-  font-family: "cafe24 Decobox";
+  font-family: "Cafe24 Decobox";
   margin-bottom: 20px;
 }
 
@@ -251,7 +256,7 @@ header .container nav ul .search img {
   width: 100%;
 }
 #help-us .container .txt h2 {
-  font-family: "cafe24 Decobox";
+  font-family: "Cafe24 Decobox";
   font-size: 80px;
   margin-top: 5px;
   
@@ -294,7 +299,7 @@ header .container nav ul .search img {
 #flim .container .title h2{
   font-size: 120px;
   color: #111;
-  font-family: "cafe24 Decobox";
+  font-family: "Cafe24 Decobox";
   text-align: center;
 }
 /* 스와이퍼 */
@@ -336,7 +341,7 @@ header .container nav ul .search img {
 .swiper2 > .swiper-wrapper > .swiper-slide > h4 {
   font-size: 48px;
   color: #F05B23;
-  font-family:"cafe24 Decobox";
+  font-family:"Cafe24 Decobox";
   white-space: nowrap;/*😉*/
   display: inline-block;/*😉*/
   text-align: center;
@@ -420,7 +425,7 @@ header .container nav ul .search img {
   width: 100%;
 }
 #shop .container .txt h2 {
-  font-family: "cafe24 Decobox";
+  font-family: "Cafe24 Decobox";
   font-size: 80px;
   margin-top: 5px;
   text-align: center;
@@ -507,7 +512,7 @@ header .container nav ul .search img {
   position: absolute;
   bottom: 0;left: 50%;
   transform: translateX(-50%);
-  width: 30vw;
+  /* width: 100%; */
   height: 50vh;
 }
 .fix-img img {
@@ -815,6 +820,8 @@ header .container nav ul .search img {
   }
   #shop .container .txt p {
     font-size: 14px;}
+
+
 }
 /*378*/
 @media (max-width:378px) {

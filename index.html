@@ -7,7 +7,9 @@
   <title>그로밋 반응형 홈페이지</title>
   <!-- 스와이퍼 -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+  <!-- 파비콘 -->
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.ico">
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -226,8 +228,8 @@
             </ul>
           </div>
           <div class="copyright">
-             <p>&copy;2025 AARDMAN ANIMATIONS LTD</p>
-             <p>MADE IN BRISTOL WITH LOVE</p>
+            <p>&copy;2025 AARDMAN ANIMATIONS LTD</p>
+            <p>MADE IN BRISTOL WITH LOVE</p>
           </div>
         </div>
         <div class="fix-img">
@@ -264,35 +266,35 @@
                   <li><a href="#">WEBSITE</a></li>
                 </ul>
               </div>
-            <div class="f-nav">
-              <ul>
-                <li><a href="#">PRIVACE NOTICE FOR CHILDREN</a></li>
-                <li><a href="#">TERMS & CONDITIONS</a></li>
-                <li><a href="#">PRIVACY POLICY</a></li>
-                <li><a href="#">LATEST NEWS</a></li>
-              </ul>
-              <ul>
-                <li><a href="#">HISTORY</a></li>
-                <li><a href="#">FILMS</a></li>
-                <li><a href="#">GALLERY</a></li>
-                <li><a href="#">NICK PARK</a></li>
-                <li><a href="#">THE GRAND APPEAL</a></li>
-              </ul>
+              <div class="f-nav">
+                <ul>
+                  <li><a href="#">PRIVACE NOTICE FOR CHILDREN</a></li>
+                  <li><a href="#">TERMS & CONDITIONS</a></li>
+                  <li><a href="#">PRIVACY POLICY</a></li>
+                  <li><a href="#">LATEST NEWS</a></li>
+                </ul>
+                <ul>
+                  <li><a href="#">HISTORY</a></li>
+                  <li><a href="#">FILMS</a></li>
+                  <li><a href="#">GALLERY</a></li>
+                  <li><a href="#">NICK PARK</a></li>
+                  <li><a href="#">THE GRAND APPEAL</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="sns">
+              <img src="images/facebook.png" alt="">
+              <img src="images/insta.png" alt="">
+              <img src="images/youtube.png" alt="">
+            </div>
+            <div class="copyright">
+              <p>&copy;2025 AARDMAN ANIMATIONS LTD</p>
+              <p>MADE IN BRISTOL WITH LOVE</p>
             </div>
           </div>
-          <div class="sns">
-            <img src="images/facebook.png" alt="">
-            <img src="images/insta.png" alt="">
-            <img src="images/youtube.png" alt="">
+          <div class="fix-img">
+            <img id="animated-box" src="images/footer-img.png" alt="" class="scroll-image s2">
           </div>
-          <div class="copyright">
-             <p>&copy;2025 AARDMAN ANIMATIONS LTD</p>
-             <p>MADE IN BRISTOL WITH LOVE</p>
-          </div>
-        </div>
-        <div class="fix-img">
-          <img id="animated-box" src="images/footer-img.png" alt="" class="scroll-image s2">
-        </div>
         </div>
     </article>
 
@@ -302,8 +304,8 @@
     <!-- 9버전 -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <!-- ScrollMagic CDN -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
 
     <script>
 
@@ -382,7 +384,7 @@
             });
           },
         },
-      }); 
+      });
 
       /*그로밋*/
 
@@ -402,17 +404,17 @@
       //   triggerHook: 0.8,
       //   reverse: true // 한 번만 등장하게
       // })
-      
+
       // .setClassToggle(".scroll-image", "fade-in")
       // .addIndicators({ name: "🎯 등장씬" }) // 디버깅 선
       // .addTo(controller);
-       
+
       const gromitImg1 = document.querySelector(".s1");
       const gromitImg2 = document.querySelector(".s2");
-      
+
       const showImg = (entries, observer) => {//antries는 intersectionObserver가 감지할 요소
         entries.forEach(entry => {
-          if(entry.isIntersecting){
+          if (entry.isIntersecting) {
             const keyframes = {//애니메이션 적용할 속성
               opacity: [0, 1],
               translate: ["0 50px", "0 -10px"],//x축 ,y축
@@ -430,8 +432,8 @@
 
       //IntersectionObserver인스턴스 생성 파라미터로 showImg전달
       const gromitObserver = new IntersectionObserver(showImg, {
-  threshold: 0.1 // 10% 이상 보일 때 트리거
-})
+        threshold: 0.1 // 10% 이상 보일 때 트리거
+      })
 
       //생성한 인스턴스에 oberve로 감지할 요소를 파라미터로 전달
       gromitObserver.observe(gromitImg1)
